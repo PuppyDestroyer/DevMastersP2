@@ -26,7 +26,8 @@ COPY --from=builder /app/webserver /webserver
 COPY --from=builder /app/Imagen/ /Imagen/
 
 # El contenedor escuchará en el puerto 8080
-EXPOSE 8080
+EXPOSE 80
 
 # *** ¡CRUCIAL! Define el comando que se ejecutará al iniciar el contenedor. ***
+
 CMD ["/webserver"]
