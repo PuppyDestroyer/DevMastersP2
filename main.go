@@ -30,9 +30,10 @@ func main() {
 	fileServer := http.FileServer(http.Dir("./Imagen"))
 	http.Handle("/Imagen/", http.StripPrefix("/Imagen/", fileServer))
 
-	fmt.Println("Servidor iniciado en http://localhost:8080") // Iniciar el servidor en el puerto 8080
+	fmt.Println("Servidor iniciado en http://localhost:80") // Iniciar el servidor en el puerto 80
 
-	if err := http.ListenAndServe(":8080", nil); err != nil {
+	if err := http.ListenAndServe(":80", nil); err != nil {
 		fmt.Printf("Error al iniciar el servidor: %s\n", err)
 	}
 }
+
