@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devmasters
+  name: devmastersp2
 spec:
   replicas: 2  # <--- ¡IMPORTANTE! Mínimo 2 para Alta Disponibilidad.
   selector:
     matchLabels:
-      app: devmasters
+      app: devmastersp2
   template:
     metadata:
       labels:
