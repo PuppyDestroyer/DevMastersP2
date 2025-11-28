@@ -9,13 +9,11 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'echo "Compilando proyecto..."'
-                // Aquí podrías añadir tu build real si lo necesitas
             }
         }
         stage('Test') {
             steps {
                 sh 'echo "Ejecutando tests..."'
-                // Aquí podrías añadir tus tests reales
             }
         }
         stage('Docker Build & Run') {
