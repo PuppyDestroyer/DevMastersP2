@@ -23,17 +23,19 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	`
 	fmt.Fprintf(w, htmlContent)
 }
+
 func main() {
 	// 1. Define el manejador para la página principal
 	http.HandleFunc("/", handler)
 
+	// Servir archivos estáticos desde la carpeta Imagen
 	fileServer := http.FileServer(http.Dir("./Imagen"))
 	http.Handle("/Imagen/", http.StripPrefix("/Imagen/", fileServer))
 
 	fmt.Println("Servidor iniciado en http://localhost:80") // Iniciar el servidor en el puerto 80
 
+	// Escuchar en el puerto 80
 	if err := http.ListenAndServe(":80", nil); err != nil {
 		fmt.Printf("Error al iniciar el servidor: %s\n", err)
 	}
 }
-
